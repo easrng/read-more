@@ -10,6 +10,7 @@ class ReadMore extends HTMLElement {
     });
     const shadow = /** @type {ShadowRoot} */ (this.shadowRoot);
     const content = document.createElement("slot");
+    content.name = "content";
     const overlay = document.createElement("slot");
     overlay.name = "overlay";
     overlay.style.visibility = "hidden";

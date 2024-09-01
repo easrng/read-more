@@ -9,10 +9,10 @@
         font-family: Roboto, Arial, sans-serif;
       }
       easrng-read-more[open] .more,
-      easrng-read-more:not([open]) .less {
-        display: none;
-      }
-      easrng-read-more:not([hydrated]) [slot="overlay"] {
+      easrng-read-more:not([open]) .less,
+      easrng-read-more:not([hydrated]) [slot="overlay"],
+      easrng-read-more:not([hydrated]) .read-more,
+      easrng-read-more[hydrated]:not([collapse]) .read-more {
         display: none;
       }
       easrng-read-more[hydrated] [slot="overlay"] {
@@ -27,6 +27,8 @@
       }
       easrng-read-more {
         position: relative;
+        overflow: hidden;
+        display: grid;
       }
       [slot="overlay"] .read-more {
         position: absolute;
@@ -36,9 +38,6 @@
       :focus {
         outline: auto;
       }
-      easrng-read-more[hydrated]:not([collapse]) .read-more {
-        display: none;
-      }
     </style>
   </head>
   <body>
@@ -46,21 +45,24 @@
       <div slot="overlay">
         <button class="read-more">read more</button>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec
-        lectus sem. Proin dolor mi, sollicitudin et augue sit amet, porta
-        lacinia nulla. Vivamus blandit, magna vel ultricies fringilla, libero
-        purus maximus dolor, non rutrum ipsum odio eget metus. Nunc tincidunt
-        porta diam, quis venenatis dui tincidunt ut. Etiam auctor diam ac
-        pretium feugiat. Proin dignissim porttitor urna, sit amet molestie lorem
-        scelerisque ac. Aenean gravida metus vitae tellus suscipit, et facilisis
-        nisi pretium. Integer arcu nisi, ullamcorper in convallis sed, luctus eu
-        nibh. Mauris ante arcu, aliquam sed porttitor et, sagittis eu arcu.
-        Donec a velit pharetra, cursus leo et, feugiat neque.
-      </p>
-      <button class="read-more">
-        read <span class="more">more</span><span class="less">less</span>
-      </button>
+      <div slot="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec
+          lectus sem. Proin dolor mi, sollicitudin et augue sit amet, porta
+          lacinia nulla. Vivamus blandit, magna vel ultricies fringilla, libero
+          purus maximus dolor, non rutrum ipsum odio eget metus. Nunc tincidunt
+          porta diam, quis venenatis dui tincidunt ut. Etiam auctor diam ac
+          pretium feugiat. Proin dignissim porttitor urna, sit amet molestie
+          lorem scelerisque ac. Aenean gravida metus vitae tellus suscipit, et
+          facilisis nisi pretium. Integer arcu nisi, ullamcorper in convallis
+          sed, luctus eu nibh. Mauris ante arcu, aliquam sed porttitor et,
+          sagittis eu arcu. Donec a velit pharetra, cursus leo et, feugiat
+          neque.
+        </p>
+        <button class="read-more">
+          read <span class="more">more</span><span class="less">less</span>
+        </button>
+      </div>
     </easrng-read-more>
     <script>
       document.addEventListener("click", (e) => {
