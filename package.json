@@ -1,0 +1,27 @@
+{
+  "name": "@easrng/read-more",
+  "version": "0.0.0",
+  "description": "a zero-dependency \"read more\" web component",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easrng/read-more.git"
+  },
+  "keywords": [
+    "readmore",
+    "read-more",
+    "show-more",
+    "webcomponent",
+    "web-component"
+  ],
+  "author": "easrng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easrng/read-more/issues"
+  },
+  "homepage": "https://github.com/easrng/#readme",
+  "type": "module",
+  "files": [
+    "index.js"
+  ]
+}
